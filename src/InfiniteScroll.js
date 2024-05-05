@@ -1,10 +1,17 @@
 import React, {useState, useEffect} from 'react';
 
+// References : https://blog.logrocket.com/3-ways-implement-infinite-scroll-react/#building-entire-implementation-scratch
+
+// Setting up fetch data options 
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+
 const InfiniteScroll = () => {
     // Set initial state of trackers for infinite scroll
-    const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [offset, setOffset] = useState(0);
 
     // Jobs data 
     const [jobs, setJobs] = useState([]);
@@ -14,12 +21,24 @@ const InfiniteScroll = () => {
         setLoading(true);
         setError(null);
 
+        const body = JSON.stringify({
+            "limit": 30,
+            "offset": offset
+        });
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body
+        };
+
         try {
-            const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`);
+            const response = await fetch(`https://api.weekday.technology/adhoc/getSampleJdJSON`, requestOptions)
             const data = await response.json();
-            const dataScroll = data.results
+            console.log(offset)
+            console.log(data)
+            const dataScroll = data.jdList
             setJobs(prevJobs => [...prevJobs, ...dataScroll]); // update the state of setItems
-            setPage(prevPage => prevPage + 1); // update the page number
+            setOffset(prevOffset => prevOffset + 30); // update the offset
         } catch(error) {
             setError(error);
         } finally {
@@ -52,8 +71,11 @@ const InfiniteScroll = () => {
     return (
         <div>
             <ul>
-                {jobs.map(job => (
-                    <li>{job.name}</li>
+                {jobs.filter(job => {
+                    if (job.companyName !== '') return true
+                })
+                .map(job => (
+                    <li>{job.jdUid},{job.companyName}, {job.jobRole}</li>
                 ))}
             </ul>
             {loading && <p>Data Loading...</p>}
