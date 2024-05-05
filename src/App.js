@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import InfiniteScroll from './InfiniteScroll'
 
 function App() {
   return (
-    <div>
-        
-    </div>
+    <>
+    <InfiniteScroll/>
+    </>
   );
 }
 
