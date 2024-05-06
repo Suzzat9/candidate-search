@@ -4,7 +4,7 @@ import TextFilter from './Filters'
 const FilterBar = () => {
     return (
         <div>
-            <TextFilter filterKey="company" label="Enter company name"></TextFilter>
+            <TextFilter className="text-box" filterKey="company" label="Enter company name"/>
         </div>
     )
 }

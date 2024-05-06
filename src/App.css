@@ -183,3 +183,9 @@ body {
     font-size: 14px !important;
     text-transform: capitalize !important;
 }
+
+.text-box {
+    font-family: 'Lexend' !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+}

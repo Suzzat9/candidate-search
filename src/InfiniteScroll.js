@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import JobCard from './JobCard'
+import FilterBar from './FilterBar'
 // References : https://blog.logrocket.com/3-ways-implement-infinite-scroll-react/#building-entire-implementation-scratch
 
 // Setting up fetch data options 
@@ -68,6 +69,8 @@ const InfiniteScroll = () => {
 
 
     return (
+        <>
+        <FilterBar className="text-box"/>
         <div className="content-wrapper flex-content">
                 {jobs.filter(job => {
                     if (job.companyName !== '') return true
@@ -78,6 +81,7 @@ const InfiniteScroll = () => {
             {loading && <p>Data Loading...</p>}
             {error && <p>Error: {error.message}</p>}
         </div>
+        </>
     )
 
 }
