@@ -3,7 +3,12 @@
 const initialState = {
     filters: {
         companyName: '',
-        minExp: ''
+        minExp: '',
+        location: '',
+        workMode: '',
+        jobRole: '',
+        techStack: '',
+        minJdSalary: ''
     }
 }
 
