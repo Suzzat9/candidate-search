@@ -12,7 +12,7 @@ export function TextFilter({ filterKey, label}) {
     };
 
     return (
-        <TextField id = {filterKey} label = {label} labelId="text-box" onChange={handleChange}/>
+        <TextField id = {filterKey} label = {label} labelid="text-box" onChange={handleChange}/>
     )
 }
 

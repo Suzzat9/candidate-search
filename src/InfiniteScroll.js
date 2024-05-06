@@ -19,6 +19,7 @@ const InfiniteScroll = () => {
     const [jobs, setJobs] = useState([]);
 
     const filters = useSelector((state) => state.filters); // getting filter vars from redux
+    //console.log(filters)
 
     // fetch data from the API
     const fetchData = async () => {
@@ -40,6 +41,7 @@ const InfiniteScroll = () => {
             const data = await response.json();
             console.log(offset)
             const dataScroll = data.jdList
+            console.log(dataScroll)
             setJobs(prevJobs => [...prevJobs, ...dataScroll]); // update the state of setItems
             setOffset(prevOffset => prevOffset + 18); // update the offset
         } catch(error) {
@@ -76,10 +78,13 @@ const InfiniteScroll = () => {
         <FilterBar className="text-box"/>
         <div className="content-wrapper flex-content">
                 {jobs.filter(job => {
-                    if (job.companyName !== '') return true
+                    return (
+                        (!job.companyName == '') &&
+                        (!filters.companyName || job.companyName.toLowerCase().includes(filters.companyName.toLowerCase()))
+                    );
                 })
                 .map(job => (
-                    <JobCard key={job.jdUid} jobData={job} />
+                    <JobCard jobData={job} />
                 ))}
             {loading && <p>Data Loading...</p>}
             {error && <p>Error: {error.message}</p>}
