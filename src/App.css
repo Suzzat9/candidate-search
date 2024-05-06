@@ -187,5 +187,15 @@ body {
 .text-box {
     font-family: 'Lexend' !important;
     font-size: 13px !important;
-    box-sizing: border-box !important;
+}
+
+.filter-bar {
+    font-family: 'Lexend' !important;
+    font-size: 13px !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px !important;
+    ;
+    margin-top: 20px !important;
 }
