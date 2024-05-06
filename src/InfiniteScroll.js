@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import JobCard from './JobCard'
 // References : https://blog.logrocket.com/3-ways-implement-infinite-scroll-react/#building-entire-implementation-scratch
 
 // Setting up fetch data options 
@@ -22,7 +22,7 @@ const InfiniteScroll = () => {
         setError(null);
 
         const body = JSON.stringify({
-            "limit": 30,
+            "limit": 10,
             "offset": offset
         });
         const requestOptions = {
@@ -38,7 +38,7 @@ const InfiniteScroll = () => {
             console.log(data)
             const dataScroll = data.jdList
             setJobs(prevJobs => [...prevJobs, ...dataScroll]); // update the state of setItems
-            setOffset(prevOffset => prevOffset + 30); // update the offset
+            setOffset(prevOffset => prevOffset + 10); // update the offset
         } catch(error) {
             setError(error);
         } finally {
@@ -69,15 +69,13 @@ const InfiniteScroll = () => {
 
 
     return (
-        <div>
-            <ul>
+        <div className="content-wrapper flex-content">
                 {jobs.filter(job => {
                     if (job.companyName !== '') return true
                 })
                 .map(job => (
-                    <li>{job.jdUid},{job.companyName}, {job.jobRole}</li>
+                    <JobCard jobData={job} />
                 ))}
-            </ul>
             {loading && <p>Data Loading...</p>}
             {error && <p>Error: {error.message}</p>}
         </div>

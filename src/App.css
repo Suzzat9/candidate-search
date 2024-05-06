@@ -50,6 +50,7 @@
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 20px;
+    max-width: 1000px;
 }
 
 h6 {

@@ -6,12 +6,15 @@ import JobCard from './JobCard'
 function App() {
   return (
     <>
+    {/* <div className="content-wrapper flex-content">
+        <JobCard/>
+        <JobCard/>
+        <JobCard/>
+    </div> */}
     <div className="content-wrapper flex-content">
-        <JobCard/>
-        <JobCard/>
-        <JobCard/>
+    <InfiniteScroll/>
     </div>
-    {/* <InfiniteScroll/> */}
+    
     </>
   );
 }
