@@ -80,7 +80,13 @@ const InfiniteScroll = () => {
                 {jobs.filter(job => {
                     return (
                         (!job.companyName == '') &&
-                        (!filters.companyName || job.companyName.toLowerCase().includes(filters.companyName.toLowerCase()))
+                        (!filters.companyName || job.companyName.toLowerCase().includes(filters.companyName.toLowerCase())) &&
+                        (!filters.location || job.location.toLowerCase().includes(filters.location.toLowerCase())) &&
+                        (!filters.jobRole || job.jobRole.toLowerCase().includes(filters.jobRole)) &&
+                        (!filters.techStack || job.jobRole.toLowerCase().includes(filters.techStack)) &&
+                        (!filters.minExp || job.minExp >= filters.minExp) &&
+                        (!filters.workMode || job.location.toLowerCase().includes(filters.workMode)) &&
+                        (!filters.minJdSalary || job.minJdSalary >= filters.minJdSalary)
                     );
                 })
                 .map(job => (

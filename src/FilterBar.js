@@ -56,7 +56,7 @@ const FilterBar = () => {
             <TextFilter className="text-box" filterKey="location" label="Enter city name"/>
             <SelectOption filterKey="jobRole" label="Job Role" value={filters.jobRole} options={optionsRole}/>
             <SelectOption filterKey="techStack" label="Tech Stack" value={filters.techStack} options={optionsTech}/>
-            <SelectOption filterKey="minExp" label="Experience" value={filters.minExp} options={optionsExp}/>
+            <SelectOption filterKey="minExp" label="Minimum Experience" value={filters.minExp} options={optionsExp}/>
             <SelectOption filterKey="workMode" label="Remote/On-site" value={filters.workMode} options={optionsWorkMode}/>
             <SelectOption filterKey="minJdSalary" label="Min Base Pay" value={filters.minJdSalary} options={optionsPay}/>
         </div>

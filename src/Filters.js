@@ -1,7 +1,8 @@
 import * as React from 'react'
-import {Box, TextField, Select, InputLabel, MenuItem, FormControl} from '@mui/material';
+import {Box, TextField, Select, InputLabel, MenuItem, FormControl, IconButton} from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from './actions';
+import CloseIcon from '@mui/icons-material/Close';
 
 export function TextFilter({ filterKey, label}) {
 
@@ -23,13 +24,22 @@ export function SelectOption({ filterKey, label, value, options }) {
     const handleChange = (event) => {
         dispatch(setFilter({ [filterKey]: event.target.value }));
     };
+
+    const handleClear = () => {
+        dispatch(setFilter({ [filterKey]: '' }));
+    };
     
     return (
         <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
+                {value && (  // Render close button only if value is not empty
+                    <IconButton onClick={handleClear} aria-label="clear">
+                        <CloseIcon />
+                    </IconButton>
+                )}
                 <InputLabel id="demo-simple-select-label">{label}</InputLabel>
                 <Select
-                labelId="text-box"
+                labelid="text-box"
                 id={ filterKey }
                 value={value}
                 label={label}
