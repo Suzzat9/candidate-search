@@ -6,46 +6,63 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+// References : https://mui.com/material-ui/react-card/
+
 const jobData = {
-    "logo": "",
-    "companyName": "XYZ",
+    "logoUrl": "https://logo.clearbit.com/dropbox.com",
+    "companyName": "Dropbox",
     "role" : "Engineer",
     "location" : "Delhi",
     "salary" : "20-25 LPA",
-    "about" : "about the company xyz",
+    "about" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet commodo nulla facilisi nullam vehicula ipsum a. Nec ultrices dui sapien eget mi. Amet massa vitae tortor condimentum lacinia quis vel eros. Sed odio morbi quis commodo odio aenean. Suspendisse ultrices gravida dictum fusce ut placerat. Feugiat vivamus at augue eget. Pretium fusce id velit ut tortor pretium viverra suspendisse potenti. Urna et pharetra pharetra massa massa ultricies mi. Netus et malesuada fames ac turpis. Massa placerat duis ultricies lacus sed turpis tincidunt id. Est velit egestas dui id ornare arcu odio ut sem.",
     "experience" : 3
 };
 
 export default function JobCard() {
-  return (
+    const [showFullAbout, setShowFullAbout] = React.useState(false);
+
+    const toggleAbout = () => {
+    setShowFullAbout(showFullAbout);
+    };
+
+    return (
     <Card sx={{ maxWidth: 320, minHeight: 450 }}>
-      <CardMedia
-        sx={{ height: 50, width: 50 }}
-        image={ jobData.logo }
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography variant="h7" component="div">
-          {jobData.companyName}
+    <CardContent>
+        <div className="flex-row">
+            <CardMedia
+                    sx={{ height:65, width: 65 }}
+                    image={jobData.logoUrl}
+                    className="inline-div"
+            />
+            <div>
+            <Typography className="company-name" component="div">
+                {jobData.companyName}
+            </Typography>
+            <Typography variant="h6" component="div">
+                {jobData.role}
+            </Typography>
+            <Typography variant="sub-text" component="div">
+                {jobData.location}
+            </Typography>
+            </div>
+        </div>
+        <Typography sx={{ marginTop: 2}} variant="h8" component="div">
+          Expected Salary: {jobData.salary}
         </Typography>
-        <Typography variant="h6" component="div">
-          {jobData.role}
-        </Typography>
-        <Typography variant="h8" component="div">
-          {jobData.location}
-        </Typography>
-        <Typography variant="h8" component="div">
-          {jobData.salary}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+            sx={{ marginTop: 4, fontSize: 15 }}
+            className="row"
+            >
           {jobData.about}
         </Typography>
-        <Typography variant="h8" component="div">
-            Minimum Experience:
-          {jobData.experience}
+        <CardActions className="centered">
+        <Button size="small">View job</Button>
+        </CardActions>
+        <Typography sx={{ marginTop: 2}} variant="h8" component="div">
+            Minimum Experience: {jobData.experience}
         </Typography>
-      </CardContent>
-      <CardActions>
+        </CardContent>
+        <CardActions className="centered">
         <Button size="small">Apply</Button>
       </CardActions>
     </Card>

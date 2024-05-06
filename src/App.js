@@ -6,7 +6,11 @@ import JobCard from './JobCard'
 function App() {
   return (
     <>
-    <JobCard/>
+    <div className="content-wrapper flex-content">
+        <JobCard/>
+        <JobCard/>
+        <JobCard/>
+    </div>
     {/* <InfiniteScroll/> */}
     </>
   );
