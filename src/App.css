@@ -61,7 +61,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 20px;
-    max-width: 1200px;
+    max-width: 1300px;
 }
 
 .head-3 {
@@ -181,21 +181,37 @@ body {
     line-height: 1.75 !important;
     min-width: 62px !important;
     font-size: 14px !important;
+    margin-left: -2px !important;
     text-transform: capitalize !important;
 }
 
 .text-box {
     font-family: 'Lexend' !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
+    text-wrap: wrap !important;
+    word-break: break-word !important;
+}
+
+#companyName-label {
+    font-family: 'Lexend' !important;
+    font-size: 12px !important;
+    text-wrap: wrap !important;
+    word-break: break-word !important;
+}
+
+#location-label {
+    font-family: 'Lexend' !important;
+    font-size: 12px !important;
+    text-wrap: wrap !important;
+    word-break: break-word !important;
 }
 
 .filter-bar {
     font-family: 'Lexend' !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 10px !important;
-    ;
     margin-top: 20px !important;
 }

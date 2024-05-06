@@ -22,7 +22,7 @@ const FilterBar = () => {
 
     const optionsWorkMode = [
         { value: 'remote', label: 'Remote'},
-        { value: '', label: 'On-Site'}
+        { value: 'on-site', label: 'On-Site'}
     ]
 
     const optionsTech = [
@@ -52,12 +52,12 @@ const FilterBar = () => {
 
     return (
         <div className="filter-bar">
-            <TextFilter className="text-box" filterKey="companyName" label="Enter company name"/>
-            <TextFilter className="text-box" filterKey="location" label="Enter city name"/>
+            <TextFilter filterKey="companyName" label="Enter company name"/>
+            <TextFilter filterKey="location" label="Enter city name"/>
             <SelectOption filterKey="jobRole" label="Job Role" value={filters.jobRole} options={optionsRole}/>
             <SelectOption filterKey="techStack" label="Tech Stack" value={filters.techStack} options={optionsTech}/>
             <SelectOption filterKey="minExp" label="Minimum Experience" value={filters.minExp} options={optionsExp}/>
-            <SelectOption filterKey="workMode" label="Remote/On-site" value={filters.workMode} options={optionsWorkMode}/>
+            <SelectOption filterKey="workMode" label="Remote/On-site   " value={filters.workMode} options={optionsWorkMode}/>
             <SelectOption filterKey="minJdSalary" label="Min Base Pay" value={filters.minJdSalary} options={optionsPay}/>
         </div>
     )

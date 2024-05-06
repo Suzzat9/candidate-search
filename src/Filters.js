@@ -13,7 +13,7 @@ export function TextFilter({ filterKey, label}) {
     };
 
     return (
-        <TextField id = {filterKey} label = {label} labelid="text-box" onChange={handleChange}/>
+        <TextField id = {filterKey} label = {label} className="text-box" onChange={handleChange}/>
     )
 }
 
@@ -32,23 +32,23 @@ export function SelectOption({ filterKey, label, value, options }) {
     return (
         <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
-                {value && (  // Render close button only if value is not empty
-                    <IconButton onClick={handleClear} aria-label="clear">
-                        <CloseIcon />
-                    </IconButton>
-                )}
-                <InputLabel id="demo-simple-select-label">{label}</InputLabel>
+                <InputLabel className="text-box">{label}</InputLabel>
                 <Select
-                labelid="text-box"
+                className="text-box"
                 id={ filterKey }
                 value={value}
                 label={label}
                 onChange={handleChange}>
             {options.map((option) => (
-            <MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>
+            <MenuItem className="text-box" key={option.value} value={option.value}>{option.label}</MenuItem>
             ))}
             </Select>
         </FormControl>
+        {value && (  // Render close button only if value is not empty
+            <IconButton onClick={handleClear} aria-label="clear" sx={{ marginLeft: -5 }}>
+                <CloseIcon className="text-box"/>
+            </IconButton>
+        )}
         </Box>
     );
 
