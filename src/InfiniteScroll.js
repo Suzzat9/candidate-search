@@ -22,7 +22,7 @@ const InfiniteScroll = () => {
         setError(null);
 
         const body = JSON.stringify({
-            "limit": 10,
+            "limit": 18,
             "offset": offset
         });
         const requestOptions = {
@@ -35,10 +35,9 @@ const InfiniteScroll = () => {
             const response = await fetch(`https://api.weekday.technology/adhoc/getSampleJdJSON`, requestOptions)
             const data = await response.json();
             console.log(offset)
-            console.log(data)
             const dataScroll = data.jdList
             setJobs(prevJobs => [...prevJobs, ...dataScroll]); // update the state of setItems
-            setOffset(prevOffset => prevOffset + 10); // update the offset
+            setOffset(prevOffset => prevOffset + 18); // update the offset
         } catch(error) {
             setError(error);
         } finally {
@@ -74,7 +73,7 @@ const InfiniteScroll = () => {
                     if (job.companyName !== '') return true
                 })
                 .map(job => (
-                    <JobCard jobData={job} />
+                    <JobCard key={job.jdUid} jobData={job} />
                 ))}
             {loading && <p>Data Loading...</p>}
             {error && <p>Error: {error.message}</p>}
