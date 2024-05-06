@@ -53,8 +53,8 @@ const FilterBar = () => {
 
     return (
         <div className="filter-bar">
-            <TextFilter filterKey="companyName" label="Enter company name"/>
-            <TextFilter filterKey="location" label="Enter city name"/>
+            <TextFilter className="text-box" filterKey="companyName" label="Enter company name"/>
+            <TextFilter className="text-box" filterKey="location" label="Enter city name"/>
             <SelectOption filterKey="jobRole" label="Job Role" value={filters.jobRole} options={optionsRole}/>
             <SelectOption filterKey="techStack" label="Tech Stack" value={filters.techStack} options={optionsTech}/>
             <SelectOption filterKey="minExp" label="Minimum Experience" value={filters.minExp} options={optionsExp}/>

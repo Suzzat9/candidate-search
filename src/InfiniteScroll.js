@@ -75,7 +75,7 @@ const InfiniteScroll = () => {
 
     return (
         <>
-        <FilterBar className="text-box"/>
+        <FilterBar/>
         <div className="content-wrapper flex-content">
                 {jobs.filter(job => {
                     return (

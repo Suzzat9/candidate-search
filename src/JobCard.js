@@ -28,7 +28,9 @@ export default function JobCard({jobData}) {
             </div>
         </div>
         <Typography className="salary" component="div">
-          Estimated Salary: upto {jobData.maxJdSalary} {jobData.salaryCurrencyCode} ✅
+            {/* If minJdSalary exists display range else display upto maxSalary */}
+            Estimated Salary: {jobData.minJdSalary ? `${jobData.minJdSalary}-${jobData.maxJdSalary}` : 
+            `upto ${jobData.maxJdSalary}`} {jobData.salaryCurrencyCode} ✅
         </Typography>
         <Typography className="about-comp" component="div">
           About Company: 
@@ -37,8 +39,7 @@ export default function JobCard({jobData}) {
           About us 
         </Typography>
         <Typography
-            className="row"
-            >
+            className="row">
           {jobData.jobDetailsFromCompany}
         </Typography>
         <CardActions className="centered">
@@ -48,7 +49,8 @@ export default function JobCard({jobData}) {
             Minimum Experience:
         </Typography>
         <Typography className="head-2" component="div">
-            {jobData.minExp} years
+        {/* If minExp exists else NA */}
+        {jobData.minExp ? `${jobData.minExp} years` : `NA`}
         </Typography>
         </CardContent>
         <CardActions className="centered">

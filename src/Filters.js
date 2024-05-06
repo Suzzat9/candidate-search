@@ -34,23 +34,23 @@ export function SelectOption({ filterKey, label, value, options }) {
     };
     
     return (
-        <Box sx={{ minWidth: 120 }}>
+        <Box className="text-box">
             <FormControl fullWidth>
-                <InputLabel className="text-box">{label}</InputLabel>
+                <InputLabel className="label-text">{label}</InputLabel>
                 <Select
-                className="text-box"
+                className="label-text"
                 id={ filterKey }
                 value={value}
                 label={label}
                 onChange={handleChange}>
             {options.map((option) => (
-            <MenuItem className="text-box" key={option.value} value={option.value}>{option.label}</MenuItem>
+            <MenuItem className="label-text" key={option.value} value={option.value}>{option.label}</MenuItem>
             ))}
             </Select>
         </FormControl>
         {value && (  // Render close button only if value is not empty
-            <IconButton onClick={handleClear} aria-label="clear" sx={{ marginLeft: -5 }}>
-                <CloseIcon className="text-box"/>
+            <IconButton onClick={handleClear} aria-label="clear" sx={{ marginLeft: -8, marginTop: 1.2 }}>
+                <CloseIcon className="label-text"/>
             </IconButton>
         )}
         </Box>

@@ -185,30 +185,35 @@ body {
     text-transform: capitalize !important;
 }
 
-.text-box {
+.label-text {
     font-family: 'Lexend' !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     text-wrap: wrap !important;
     word-break: break-word !important;
 }
 
+.text-box {
+    width: 175px !important;
+    height: 40px !important;
+}
+
 #companyName-label {
     font-family: 'Lexend' !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     text-wrap: wrap !important;
     word-break: break-word !important;
 }
 
 #location-label {
     font-family: 'Lexend' !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     text-wrap: wrap !important;
     word-break: break-word !important;
 }
 
 .filter-bar {
     font-family: 'Lexend' !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
