@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {TextFilter, SelectOption} from './Filters'
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter } from './actions';
+
 
 const FilterBar = () => {
 
-    const [val, setVal] = useState('');
-
-    const handleChange = (event) => {
-        setVal(event.target.value);
-    };
+    const filters = useSelector((state) => state.filters); // getting filter vars from redux
 
     const options = [
         { value: 1, label: '1' },
@@ -25,7 +24,7 @@ const FilterBar = () => {
     return (
         <div className="filter-bar">
             <TextFilter className="text-box" filterKey="companyName" label="Enter company name"/>
-            <SelectOption filterKey="minExp" label="Experience" value={val} options={options} onChange={handleChange}/>
+            <SelectOption filterKey="minExp" label="Experience" value={filters.minExp} options={options}/>
         </div>
     )
 }

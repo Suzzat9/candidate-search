@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import JobCard from './JobCard'
 import FilterBar from './FilterBar'
+import { useSelector } from 'react-redux';
 // References : https://blog.logrocket.com/3-ways-implement-infinite-scroll-react/#building-entire-implementation-scratch
 
 // Setting up fetch data options 
@@ -16,6 +17,8 @@ const InfiniteScroll = () => {
 
     // Jobs data 
     const [jobs, setJobs] = useState([]);
+
+    const filters = useSelector((state) => state.filters); // getting filter vars from redux
 
     // fetch data from the API
     const fetchData = async () => {
