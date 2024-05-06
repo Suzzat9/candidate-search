@@ -24,8 +24,8 @@ const FilterBar = () => {
 
     return (
         <div className="filter-bar">
-            <TextFilter className="text-box" filterKey="company" label="Enter company name"/>
-            <SelectOption filterKey="experience" label="Experience" value={val} options={options} onChange={handleChange}/>
+            <TextFilter className="text-box" filterKey="companyName" label="Enter company name"/>
+            <SelectOption filterKey="minExp" label="Experience" value={val} options={options} onChange={handleChange}/>
         </div>
     )
 }
