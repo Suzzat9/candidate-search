@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-
+// Infinite Scroll component which will hold all the job cards
 const InfiniteScroll = () => {
     // Set initial state of trackers for infinite scroll
     const [loading, setLoading] = useState(false);
@@ -39,9 +39,9 @@ const InfiniteScroll = () => {
         try {
             const response = await fetch(`https://api.weekday.technology/adhoc/getSampleJdJSON`, requestOptions)
             const data = await response.json();
-            console.log(offset)
+            //console.log(offset)
             const dataScroll = data.jdList
-            console.log(dataScroll)
+            //console.log(dataScroll)
             setJobs(prevJobs => [...prevJobs, ...dataScroll]); // update the state of setItems
             setOffset(prevOffset => prevOffset + 18); // update the offset
         } catch(error) {
@@ -55,7 +55,7 @@ const InfiniteScroll = () => {
     const handleScroll = () => {
         if (window.innerHeight + document.documentElement.scrollTop !== 
             document.documentElement.offsetHeight || loading) {
-            return;
+            return; // if the user has not scrolled to the end of the page, just return
         }
         fetchData();
     };

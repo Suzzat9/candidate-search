@@ -1,4 +1,4 @@
-// store.js
+// creating redux store
 
 import { createStore } from 'redux';
 import rootReducer from './reducers';

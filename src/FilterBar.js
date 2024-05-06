@@ -2,11 +2,12 @@ import React from 'react'
 import {TextFilter, SelectOption} from './Filters'
 import { useSelector } from 'react-redux';
 
-
+// Creating FilterBar component which will include all the filters
 const FilterBar = () => {
 
     const filters = useSelector((state) => state.filters); // getting filter vars from redux
 
+    // Setting options for various filters
     const optionsExp = [
         { value: 1, label: '1' },
         { value: 2, label: '2' },
@@ -47,7 +48,7 @@ const FilterBar = () => {
         { value: 40, label: '40'},
         { value: 50, label: '50'},
         { value: 60, label: '60'},
-        { value: 61, label: '61'},
+        { value: 70, label: '70'},
     ]
 
     return (
@@ -57,7 +58,7 @@ const FilterBar = () => {
             <SelectOption filterKey="jobRole" label="Job Role" value={filters.jobRole} options={optionsRole}/>
             <SelectOption filterKey="techStack" label="Tech Stack" value={filters.techStack} options={optionsTech}/>
             <SelectOption filterKey="minExp" label="Minimum Experience" value={filters.minExp} options={optionsExp}/>
-            <SelectOption filterKey="workMode" label="Remote/On-site   " value={filters.workMode} options={optionsWorkMode}/>
+            <SelectOption filterKey="workMode" label="Remote/On-site" value={filters.workMode} options={optionsWorkMode}/>
             <SelectOption filterKey="minJdSalary" label="Min Base Pay" value={filters.minJdSalary} options={optionsPay}/>
         </div>
     )

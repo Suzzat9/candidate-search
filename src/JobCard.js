@@ -3,7 +3,7 @@ import { Card, CardContent, CardMedia, Typography, CardActions, Button } from '@
 
 // References : https://mui.com/material-ui/react-card/
 
-
+// Defining JobCard to display details of each job posting
 export default function JobCard({jobData}) {
 
     return (

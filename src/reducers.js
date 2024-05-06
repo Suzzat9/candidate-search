@@ -1,5 +1,6 @@
 // reducer function - called when state changes 
 
+// setting state variables to track (from the FilterBar)
 const initialState = {
     filters: {
         companyName: '',
@@ -12,9 +13,10 @@ const initialState = {
     }
 }
 
+
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'SET_FILTER':
+        case 'SET_FILTER': // if setFilter is called, set the new state
             return {
                 ...state,
                 filters: {

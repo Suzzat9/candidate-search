@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from './actions';
 import CloseIcon from '@mui/icons-material/Close';
 
+
+// Defining generic text input filter - will use for location and company name fields
 export function TextFilter({ filterKey, label}) {
 
     const dispatch = useDispatch();
 
     const handleChange = (event) => {
-        dispatch(setFilter({ [filterKey]: event.target.value }));
+        dispatch(setFilter({ [filterKey]: event.target.value })); // call the setFilter function when 
+        // there is a change in the field
     };
 
     return (
@@ -17,6 +20,7 @@ export function TextFilter({ filterKey, label}) {
     )
 }
 
+// Defining generic select option filter
 export function SelectOption({ filterKey, label, value, options }) {
 
     const dispatch = useDispatch();
@@ -26,7 +30,7 @@ export function SelectOption({ filterKey, label, value, options }) {
     };
 
     const handleClear = () => {
-        dispatch(setFilter({ [filterKey]: '' }));
+        dispatch(setFilter({ [filterKey]: '' })); // function to clear the inputs - when user clicks "close"
     };
     
     return (
