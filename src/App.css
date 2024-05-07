@@ -195,6 +195,8 @@ body {
 .text-box {
     width: 175px !important;
     height: 40px !important;
+    margin-top: 10px !important;
+    ;
 }
 
 #companyName-label {
@@ -218,5 +220,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 10px !important;
+    row-gap: 10px !important;
     margin-top: 20px !important;
 }
