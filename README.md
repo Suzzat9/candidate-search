@@ -2,8 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
 In the project directory, you can run:
 
 ### `npm start`
@@ -14,57 +12,35 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This section describes the different components that have been built for the application, going from the smaller components to the largest
 
-### `npm run build`
+### Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **Filters.js** : Contains two functions. **TextFilter** is a generic text input component and **SelectOption** is a generic select input component. These are used to create the filter options at the top of the app page 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* **JobCard.js** : Contains a generic Card component that will be used to display the job cards 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* **FilterBar.js** : Imports **TextFilter** and **SelectOption** and uses these to create the specific fields we will filter by. 
 
-### `npm run eject`
+* **InfiniteScroll.js** : All the above components are put together in this file, it also has the logic for gathering the jobs data from the API. In the `return` block, we have a **FilterBar**, logic for filtering the JobCards and a map function to create a JobCard for each job. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* **App.js** : Just imports InfiniteScroll and presents it 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **index.js** : Imports the `App` and also specifies the `Redux` data store where the state of each of the filter options is managed
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### State management
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* **reducers.js** : Contains the state variables and the rootReducer function which will set the state of these variables when `setFilter` is called. The state is of a variable will be set to include the action.payload
 
-## Learn More
+* **actions.js** : Specifies the relevant action types for the state variables 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* **store.js** : Sets up the `Redux` store to manage global state
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Styling 
 
-### Code Splitting
+* **App.css** : Styles of all the components are set in this file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Issues faced 

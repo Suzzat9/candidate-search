@@ -27,7 +27,7 @@ const InfiniteScroll = () => {
         setError(null);
 
         const body = JSON.stringify({
-            "limit": 18,
+            "limit": 10,
             "offset": offset
         });
         const requestOptions = {
@@ -41,15 +41,20 @@ const InfiniteScroll = () => {
             const data = await response.json();
             //console.log(offset)
             const dataScroll = data.jdList
-            //console.log(dataScroll)
+            console.log(dataScroll)
             setJobs(prevJobs => [...prevJobs, ...dataScroll]); // update the state of setItems
-            setOffset(prevOffset => prevOffset + 18); // update the offset
+            setOffset(prevOffset => prevOffset + 10); // update the offset
         } catch(error) {
             setError(error);
         } finally {
             setLoading(false);
         }
     }
+
+    // calling fetchdata on component mount
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     // handling a scroll event
     const handleScroll = () => {
@@ -59,11 +64,6 @@ const InfiniteScroll = () => {
         }
         fetchData();
     };
-
-    // calling fetchdata on component mount
-    useEffect(() => {
-        fetchData();
-    }, []);
 
     // listen for the scroll event then call handleScroll
     useEffect(() => {
@@ -84,8 +84,8 @@ const InfiniteScroll = () => {
                         (!filters.location || job.location.toLowerCase().includes(filters.location.toLowerCase())) &&
                         (!filters.jobRole || job.jobRole.toLowerCase().includes(filters.jobRole)) &&
                         (!filters.techStack || job.jobRole.toLowerCase().includes(filters.techStack)) &&
-                        (!filters.minExp || job.minExp <= filters.minExp) &&
-                        (!filters.minJdSalary || job.minJdSalary >= filters.minJdSalary) && 
+                        (!filters.minExp || (job.minExp <= filters.minExp && job.minExp !== null)) &&
+                        (!filters.minJdSalary || (job.minJdSalary >= filters.minJdSalary && job.minJdSalary !== null)) && 
                         (!filters.workMode || 
                             (filters.workMode === 'remote' && job.location === 'remote') ||
                             (filters.workMode === 'onsite' && job.location !== 'remote')
