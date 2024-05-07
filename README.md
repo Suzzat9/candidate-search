@@ -1,16 +1,13 @@
 # Getting Started with Candidate Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* First, clone this repository by running : `git clone "https://github.com/Suzzat9/candidate-search.git"` in your terminal on your system. 
 
-In the project directory, you can run:
+* Next, run `cd candidate-search` so that you are in the project directory
 
-### `npm start`
+* In the project directory, run `npm install` or `yarn install` to install the project dependencies 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Finally, run `npm start` and visit [http://localhost:3000](http://localhost:3000) to view the app in your browser
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 ## Project Structure
 
