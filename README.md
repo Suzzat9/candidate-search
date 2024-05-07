@@ -1,6 +1,6 @@
 # Getting Started with Candidate Search App
 
-* First, clone this repository by running : `git clone "https://github.com/Suzzat9/candidate-search.git"` in your terminal on your system. 
+* First, clone this repository by running : `git clone "https://github.com/Suzzat9/candidate-search.git"` in a terminal on your system. 
 
 * Next, run `cd candidate-search` so that you are in the project directory
 
