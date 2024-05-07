@@ -45,4 +45,4 @@ This section describes the different components that have been built for the app
 
 ## Issues faced 
 
-In general I was able to complete the project in its entirety. The only issue I faced was getting duplicate jobs (having the same jdUid) in the API call. This was happening despite setting the offset value to update in line 46 of InfiniteScroll.js. I have just proceeded with the assumption that duplicates have been included in order to increase the amount of data for the infinite scroll. And that the duplicates issue would be handled on the database side. 
+In general I was able to complete the project in its entirety. The only issue I faced was getting duplicate jobs (having the same jdUid) in the API call. This was happening despite setting the offset value to update in line 46 of InfiniteScroll.js. I have just proceeded with the assumption that duplicates have been included in order to increase the amount of data available for the infinite scroll to work well. And that the duplicates issue would be handled on the database side. 
