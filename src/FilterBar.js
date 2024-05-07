@@ -23,7 +23,7 @@ const FilterBar = () => {
 
     const optionsWorkMode = [
         { value: 'remote', label: 'Remote'},
-        { value: 'on-site', label: 'On-Site'}
+        { value: 'onsite', label: 'On-Site'}
     ]
 
     const optionsTech = [
@@ -52,7 +52,7 @@ const FilterBar = () => {
     ]
 
     return (
-        <div className="filter-bar">
+        <div className="content-wrapper filter-bar">
             <TextFilter className="text-box" filterKey="companyName" label="Enter company name"/>
             <TextFilter className="text-box" filterKey="location" label="Enter city name"/>
             <SelectOption filterKey="jobRole" label="Job Role" value={filters.jobRole} options={optionsRole}/>
