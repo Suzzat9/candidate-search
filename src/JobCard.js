@@ -28,7 +28,7 @@ export default function JobCard({jobData}) {
             </div>
         </div>
         <Typography className="salary" component="div">
-            {/* If minJdSalary exists display range else display upto maxSalary */}
+            {/* If minJdSalary exists display range else display 'upto maxSalary' */}
             Estimated Salary: {jobData.minJdSalary ? `${jobData.minJdSalary}-${jobData.maxJdSalary}` : 
             `upto ${jobData.maxJdSalary}`} {jobData.salaryCurrencyCode} ✅
         </Typography>

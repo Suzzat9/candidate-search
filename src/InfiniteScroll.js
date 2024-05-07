@@ -79,6 +79,7 @@ const InfiniteScroll = () => {
         <div className="content-wrapper flex-content">
                 {jobs.filter(job => {
                     return (
+                        // Logic for performing filtering
                         (job.companyName !== '') &&
                         (!filters.companyName || job.companyName.toLowerCase().includes(filters.companyName.toLowerCase())) &&
                         (!filters.location || job.location.toLowerCase().includes(filters.location.toLowerCase())) &&

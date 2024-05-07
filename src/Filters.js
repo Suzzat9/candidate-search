@@ -26,7 +26,7 @@ export function SelectOption({ filterKey, label, value, options }) {
     const dispatch = useDispatch();
 
     const handleChange = (event) => {
-        dispatch(setFilter({ [filterKey]: event.target.value }));
+        dispatch(setFilter({ [filterKey]: event.target.value })); // call the setFilter function when the field changes
     };
 
     const handleClear = () => {
