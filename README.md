@@ -32,9 +32,9 @@ This section describes the different components that have been built for the app
 
 ### State management
 
-* **reducers.js** : Contains the state variables and the rootReducer function which will set the state of these variables when `setFilter` is called. The state is of a variable will be set to include the action.payload
+* **reducers.js** : Contains the state variables and the rootReducer function which will set the state of these variables when `setFilter` is called. The state is of a variable will be set to include the `action.payload`
 
-* **actions.js** : Specifies the relevant action types for the state variables 
+* **actions.js** : Specifies the relevant action types to manage global state
 
 * **store.js** : Sets up the `Redux` store to manage global state
 
@@ -44,3 +44,5 @@ This section describes the different components that have been built for the app
 
 
 ## Issues faced 
+
+In general I was able to complete the project in its entirety. The only issue I faced was getting duplicate jobs (having the same jdUid) in the API call. This was happening despite setting the offset value to update in line 46 of InfiniteScroll.js. I have just proceeded with the assumption that duplicates have been included in order to increase the amount of data for the infinite scroll. And that the duplicates issue would be handled on the database side. 

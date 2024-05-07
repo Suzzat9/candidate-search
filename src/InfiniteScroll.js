@@ -39,11 +39,11 @@ const InfiniteScroll = () => {
         try {
             const response = await fetch(`https://api.weekday.technology/adhoc/getSampleJdJSON`, requestOptions)
             const data = await response.json();
-            //console.log(offset)
             const dataScroll = data.jdList
-            console.log(dataScroll)
+            //console.log(dataScroll)
             setJobs(prevJobs => [...prevJobs, ...dataScroll]); // update the state of setItems
             setOffset(prevOffset => prevOffset + 10); // update the offset
+            //console.log(offset)
         } catch(error) {
             setError(error);
         } finally {
